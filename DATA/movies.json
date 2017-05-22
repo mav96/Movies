@@ -1,15 +1,20 @@
 {
     "films": [
         {
-            "title": "AAA",
-            "description": "AAA-AAA",
-	    "acters": ["ABC","CDB" ]
+            "title": "Alien",
+            "description": "After a space merchant vessel perceives an unknown transmission as a distress call, its landing on the source moon finds one of the crew attacked by a mysterious life-form, and they soon realize that its life cycle has merely begun. ",
+	    "acters": ["Sigourney Weaver", "Tom Skerritt", "John Hurt"]
         },
         {
-            "title": "BBB",
-            "description": "BBB-BBB",
-            "acters": ["QWE","EWQ", "ABC", "CDB" ]
-
+            "title": "Avatar",
+            "description": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+            "acters": ["Sam Worthington", "Zoe Saldana", "Sigourney Weaver"]
+        },
+        {
+	    "title": "Titanic",
+	    "description": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+	    "acters": ["Leonardo DiCaprio", "Kate Winslet", "Billy Zane"]
         }
+
     ]
 }
