@@ -1,0 +1,15 @@
+{
+    "films": [
+        {
+            "title": "AAA",
+            "description": "AAA-AAA",
+	    "acters": ["ABC","CDB" ]
+        },
+        {
+            "title": "BBB",
+            "description": "BBB-BBB",
+            "acters": ["QWE","EWQ", "ABC", "CDB" ]
+
+        }
+    ]
+}
