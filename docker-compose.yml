@@ -2,13 +2,26 @@ version: '2'
 services:
     db:
         image: postgres
-    web:
+    haproxy:
+        image: dockercloud/haproxy
+        links:
+            - webapp
+        ports:
+            - "80"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+    webapp:
         build: .
         command: python3 manage.py runserver 0.0.0.0:8000
+        ports:
+            - "8000"
         volumes:
             - .:/code
-        ports:
-            - "8000:8000"
         depends_on:
             - db
-
+    nginx:
+        build: ./nginx
+        links:
+            - haproxy:haproxy
+        ports:
+            - "80:80"
