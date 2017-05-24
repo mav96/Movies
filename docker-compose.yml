@@ -2,6 +2,7 @@ version: '2'
 services:
     db:
         image: postgres
+        cpuset: "3"
     haproxy:
         image: dockercloud/haproxy
         links:
@@ -10,6 +11,7 @@ services:
             - "80"
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
+        cpuset: "0"
     webapp:
         build: .
         command: python3 manage.py runserver 0.0.0.0:8000
@@ -19,9 +21,17 @@ services:
             - .:/code
         depends_on:
             - db
+        mem_limit:     1000000000
+        memswap_limit: 2000000000
+        mem_reservation: 512m
+        cpu_shares: 73
+        cpu_quota: 50000
+        cpuset: "1,2"
+
     nginx:
         build: ./nginx
         links:
             - haproxy:haproxy
         ports:
             - "80:80"
+        cpuset: "0"
